@@ -20,10 +20,12 @@ A powerful web-based data analysis tool built with React that enables users to u
 - **Column Selection**: Show/hide columns for focused analysis
 
 ### Machine Learning
-- **Decision Tree Classifier**: Pure JavaScript ID3 algorithm implementation
+- **Decision Tree Classifier**: Pure JavaScript ID3 algorithm for item prediction
+- **Demand Regression Model**: Linear regression for sales forecasting
 - **Product Prediction**: Predict likely purchases based on Day, Time, Weather
-- **Interactive Visualization**: ECharts tree with edge labels, icons, and tooltips
-- **Model Statistics**: Accuracy, feature importance, tree depth analysis
+- **Demand Forecasting**: Predict daily/item sales volume using weather and time features
+- **Interactive Visualizations**: ECharts tree and charts with rich tooltips
+- **Model Statistics**: Accuracy, R², RMSE, feature importance analysis
 
 ## Tech Stack
 
@@ -49,9 +51,10 @@ src/
 │   ├── FileUpload/       # Drag & drop file handling
 │   ├── Layout/           # Header, navigation
 │   ├── MergePanel/       # Dataset merging
-│   └── MLModels/         # DecisionTreePanel
+│   └── MLModels/         # DecisionTreePanel, DemandRegressionPanel
 ├── ml/
-│   └── decisionTree.js   # ID3 algorithm implementation
+│   ├── decisionTree.js   # ID3 algorithm implementation
+│   └── linearRegression.js # Multiple Linear Regression
 ├── store/
 │   └── useDataStore.js   # Zustand global state
 └── App.jsx               # Main application
@@ -91,9 +94,11 @@ npm run dev
 3. Use the prediction form to predict likely purchases
 4. Explore the interactive decision tree visualization
 
-## Decision Tree Model
+## Machine Learning Models
 
-The ML model uses the ID3 (Iterative Dichotomiser 3) algorithm:
+### Decision Tree Classifier (ID3)
+
+Predicts which item a customer is most likely to purchase:
 
 - **Features**: Day of week, Time slot (Morning/Afternoon/Evening), Weather conditions
 - **Target**: Product/Item purchased
@@ -103,6 +108,19 @@ The ML model uses the ID3 (Iterative Dichotomiser 3) algorithm:
   - Feature icons for each node type
   - Information gain percentages
   - Sample counts and class distributions
+
+### Demand Regression Model
+
+Forecasts daily item demand for operations planning:
+
+- **Features**: Rain (mm), Min/Max Temperature, Day, Time slot, Season
+- **Output**: Predicted number of sales (total or per-item)
+- **Algorithm**: Multiple Linear Regression with Ridge regularization
+- **Metrics**: R² score, RMSE, MAE, feature importance coefficients
+- **Modes**:
+  - **Total Sales**: Predict aggregate daily sales for given conditions
+  - **Item-Specific**: Predict sales for a specific product
+- **Use Cases**: Inventory management, staffing decisions, demand forecasting
 
 ## Scripts
 

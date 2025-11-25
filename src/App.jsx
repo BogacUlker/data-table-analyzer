@@ -8,6 +8,7 @@ import VirtualTable from './components/DataTable/VirtualTable';
 import ChartPanel from './components/Charts/ChartPanel';
 import MergePanel from './components/MergePanel/MergePanel';
 import DecisionTreePanel from './components/MLModels/DecisionTreePanel';
+import DemandRegressionPanel from './components/MLModels/DemandRegressionPanel';
 import ErrorNotification from './components/ErrorNotification/ErrorNotification';
 
 function App() {
@@ -74,8 +75,9 @@ function App() {
         </section>
 
         {/* ML Models Section */}
-        <section className="mb-8">
+        <section className="mb-8 space-y-6">
           <DecisionTreePanel />
+          <DemandRegressionPanel />
         </section>
 
         {/* Charts Section */}
