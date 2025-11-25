@@ -8,8 +8,9 @@ const TIME_SLOTS = ['Morning', 'Afternoon', 'Evening'];
 const SEASONS = ['Winter', 'Spring', 'Summer', 'Autumn'];
 
 export default function DemandRegressionPanel() {
-  const { currentDataset, datasets } = useDataStore();
-  const data = datasets[currentDataset]?.data || [];
+  const { dataSets, activeDataSetId } = useDataStore();
+  const activeDataSet = dataSets.find(ds => ds.id === activeDataSetId);
+  const data = activeDataSet?.data || [];
 
   const [forecaster, setForecaster] = useState(null);
   const [stats, setStats] = useState(null);
