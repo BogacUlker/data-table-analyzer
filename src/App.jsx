@@ -9,6 +9,7 @@ import ChartPanel from './components/Charts/ChartPanel';
 import MergePanel from './components/MergePanel/MergePanel';
 import DecisionTreePanel from './components/MLModels/DecisionTreePanel';
 import DemandRegressionPanel from './components/MLModels/DemandRegressionPanel';
+import TradeForecasterPanel from './components/MLModels/TradeForecasterPanel';
 import ErrorNotification from './components/ErrorNotification/ErrorNotification';
 
 function App() {
@@ -78,6 +79,7 @@ function App() {
         <section className="mb-8 space-y-6">
           <DecisionTreePanel />
           <DemandRegressionPanel />
+          <TradeForecasterPanel />
         </section>
 
         {/* Charts Section */}
