@@ -10,6 +10,7 @@ import MergePanel from './components/MergePanel/MergePanel';
 import DecisionTreePanel from './components/MLModels/DecisionTreePanel';
 import DemandRegressionPanel from './components/MLModels/DemandRegressionPanel';
 import TradeForecasterPanel from './components/MLModels/TradeForecasterPanel';
+import PriceSensitivityPanel from './components/MLModels/PriceSensitivityPanel';
 import ErrorNotification from './components/ErrorNotification/ErrorNotification';
 
 function App() {
@@ -80,6 +81,7 @@ function App() {
           <DecisionTreePanel />
           <DemandRegressionPanel />
           <TradeForecasterPanel />
+          <PriceSensitivityPanel />
         </section>
 
         {/* Charts Section */}
